@@ -1,0 +1,20 @@
+include scaffold/_kpug.pug
+
+- var attrContainerClass =  'attribute-cell';
+- var attrLabelClass = 'attribute-label';
+
+#main.my-main-div
+  section.some-section
+    div.attributes-container
+        each val, index in ['ST', 'DX', 'VT', 'AG', 'IN', 'CH', 'WL', 'PR']
+            div.attribute-container
+                +input-label({
+                    label: val,
+                    inputObj:{name: val,type:'number'},
+                    divObj:{class: attrContainerClass},
+                    spanObj:{class: attrLabelClass}
+                })
++kscript.
+  const calcAttribute = function({attributes}){
+    //Calculate an attribute
+  };

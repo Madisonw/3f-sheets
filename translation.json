@@ -1,0 +1,16 @@
+{
+    "ST": "Strength",
+    "DX": "Dexterity",
+    "VT": "Vitality",
+    "AG": "Agility",
+    "IN": "Intellect",
+    "CH": "Charisma",
+    "WL": "Will",
+    "PR": "Perception",
+    "HP": "Hit Points",
+    "SP": "Stamina Points",
+    "MV": "Movement",
+    "RF": "Reflexes",
+    "WEALTH": "Wealth",
+    "STATUS": "Status"
+}
