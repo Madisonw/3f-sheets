@@ -3,17 +3,119 @@ include scaffold/_kpug.pug
 - var attrContainerClass =  'attribute-cell';
 - var attrLabelClass = 'attribute-label';
 
-#main.my-main-div
-  section.some-section
-    div.attributes-container
-        each val, index in ['ST', 'DX', 'VT', 'AG', 'IN', 'CH', 'WL', 'PR']
-            div.attribute-container
-                +input-label({
-                    label: val,
-                    inputObj:{name: val,type:'number'},
-                    divObj:{class: attrContainerClass},
-                    spanObj:{class: attrLabelClass}
-                })
+#main.sheet-container
+  section.stats-section
+    div.box-wrapper.colspan2.charactercard
+        div.box-contents
+            +input({
+                name: 'name',
+                type: 'text'
+            })
+            p Char level
+            hr
+            p character description
+    div.box-wrapper.colspan2.combatcard
+        div.box-wrapper-label
+            p('data-i18n'='combat_label') Combat
+        div.box-contents
+            p Char Name
+            p Char level
+            hr
+            p character description
+  section.input-section
+    div.box-wrapper.colspan2
+        div.box-wrapper-label
+            p('data-i18n'='attributes_label') Attributes
+        div.box-contents
+            div.attributes-container
+                each val, index in ['ST', 'DX', 'IN', 'CH', 'VT', 'AG', 'WL', 'PR']
+                    div.attribute-container.dice-container
+                        +select-label({
+                            label: val,
+                            inputObj:{name: val,type:'number'},
+                            divObj:{class: attrContainerClass},
+                            spanObj:{class: attrLabelClass}
+                        })
+                            +option({value: 4, 'data-i18n':'val4'})
+                                4
+                            +option({value: 6, 'data-i18n':'val6'})
+                            +option({value: 8, 'data-i18n':'val8'})
+                            +option({value: 10, 'data-i18n':'val10'})
+                            +option({value: 12,'data-i18n':'val12'})
+    div.box-wrapper.colspan1
+        div.box-wrapper-label
+            p('data-i18n'='experiences_label') Experiences
+        div.box-contents
+            each val, index in ['1', '2', '3']
+                    div.custom-line
+                        div.custom-label
+                            +input({
+                                name: 'experience_'+val+'_name',
+                                type: 'text'
+                            })
+                        div.dice-container   
+                            +select({
+                                name: 'experience_'+val+'_value',
+                                type: 'number'
+                            })
+                                +option({value: 4, 'data-i18n':'val4'})
+                                    4
+                                +option({value: 6, 'data-i18n':'val6'})
+                                +option({value: 8, 'data-i18n':'val8'})
+                                +option({value: 10, 'data-i18n':'val10'})
+                                +option({value: 12,'data-i18n':'val12'})
+            div.custom-line
+                div.custom-label
+                    p Martial Discipline
+                    +textarea({name:'martial_detail'})
+                div.dice-container
+                    +select({
+                                name: 'martial_'+val+'_value',
+                                type: 'number'
+                            })
+                                +option({value: 4, 'data-i18n':'val4'})
+                                    4
+                                +option({value: 6, 'data-i18n':'val6'})
+                                +option({value: 8, 'data-i18n':'val8'})
+                                +option({value: 10, 'data-i18n':'val10'})
+                                +option({value: 12,'data-i18n':'val12'})
+    div.box-wrapper.colspan1
+        div.box-wrapper-label
+            p('data-i18n'='traits_label') Traits
+        div.box-contents
+            each val, index in ['1', '2', '3', '4', '5', '6']
+                    div.custom-line
+                        div.custom-label
+                            +input({
+                                name: 'trait_'+val+'_name',
+                                type: 'text'
+                            })
+                        div.dice-container   
+                            +select({
+                                name: 'trait_'+val+'_value',
+                                type: 'number'
+                            })
+                                +option({value: 4, 'data-i18n':'val4'})
+                                    4
+                                +option({value: 6, 'data-i18n':'val6'})
+                                +option({value: 8, 'data-i18n':'val8'})
+                                +option({value: 10, 'data-i18n':'val10'})
+                                +option({value: 12,'data-i18n':'val12'})
+    div.box-wrapper.colspan2
+        div.box-wrapper-label
+            p('data-i18n'='attacks_label') Attacks
+        div.box-contents
+            p ayy lmao
+    div.box-wrapper.colspan1
+        div.box-wrapper-label
+            p('data-i18n'='abilities_label') Abilities
+        div.box-contents
+            +textarea({name:'abilities_detail'})
+    div.box-wrapper.colspan1
+        div.box-wrapper-label
+            p('data-i18n'='inventory_label') Inventory
+        div.box-contents
+            p ayy lmao
 +kscript.
   const calcAttribute = function({attributes}){
     //Calculate an attribute

@@ -12,5 +12,18 @@
     "MV": "Movement",
     "RF": "Reflexes",
     "WEALTH": "Wealth",
-    "STATUS": "Status"
+    "STATUS": "Status",
+    "val4": "4",
+    "val6": "6",
+    "val8": "8",
+    "val10": "10",
+    "val12": "12",
+    "attributes_label": "Attributes",
+    "experiences_label": "Experiences",
+    "traits_label": "Traits",
+    "attacks_label": "Attacks",
+    "combat_label": "Combat",
+    "social_label": "Social",
+    "abilities_label": "Abilities",
+    "inventory_label": "Inventory"
 }

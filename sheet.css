@@ -1,0 +1,197 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sheet-container {
+    display: flex;
+}
+
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 66%;
+}
+
+.box-wrapper {
+    display: flex;
+    min-height: 200px;
+    margin: 8px;
+}
+
+.box-wrapper.charactercard {
+    height: 65%;
+}
+
+.box-wrapper.combatcard {
+    height: 32%;
+}
+
+.box-wrapper .box-contents {
+    border: 1px lightgrey solid;
+    width: 100%;
+}
+.box-wrapper.colspan1 {
+    width: 47%;
+}
+.box-wrapper.colspan2 {
+    width: 99%;
+}
+
+.box-wrapper-label {
+    background-color: grey;
+    width: 40px;
+    -webkit-clip-path: polygon(0px 0%, calc(100% - 10px) 0%, 100% 0px, 100% calc(100% - 10px), calc(100% - 0px) 100%, 22px 100%, 0% calc(96% - 10px), 0% 10px);
+    clip-path: polygon(0px 0%, calc(100% - 10px) 0%, 100% 0px, 100% calc(100% - 10px), calc(100% - 0px) 100%, 22px 100%, 0% calc(96% - 10px), 0% 10px);
+}
+
+.box-wrapper-label p {
+    transform: rotate(90deg) translate(20px, 0px);
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.attributes-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.attribute-container {
+    border: 1px lightgrey solid;
+    width: 24%;
+    height: 120px;
+    padding: 8px;
+    flex: 1 0 21%;
+    background-size: 80px 100px;
+    background-position: 50% 80%;
+}
+
+.attribute-container label {
+    font-size: 24x;
+    font-weight: 800;
+}
+.attribute-container label span {
+    width: 70%;
+    color: black;
+}
+
+.attribute-container select {
+    width: 30%;
+    float: right;
+    margin-top: 0px;
+    font-size: 22px;
+    text-align: center;
+    border: 1px solid transparent;
+    visibility: transparent;
+    background-color: transparent;
+    padding: 0px;
+}
+.attribute-container select:hover,
+.attribute-container:hover select,
+.attribute-container select:active {
+    border: 1px solid black;
+    visibility: visible;
+  
+}
+
+
+.custom-line {
+    display: flex;
+    border-top: 1px solid grey;
+    padding: 5px;
+}
+
+.custom-line:first-child {
+    border-bottom: 1px solid transparent;
+}
+
+.custom-line .custom-label {
+    width: 78%;
+}
+.custom-line .custom-label input {
+    width: 100%;
+    height: 95%;
+}
+.custom-line .dice-container {
+    width: 25%;
+    background-position-x: 100%;
+    background-position-y: 30%;
+}
+
+.custom-line .dice-container select {
+    width: 50%;
+    height: 95%;
+}
+
+.dice-container {
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.dice-container:has(option[value='4']:checked) {
+    background-image: url('https://raw.githubusercontent.com/Madisonw/3f-sheets/main/img/lg/3F_Dice_4_Large.png');
+    
+}
+
+.dice-container:has(option[value='6']:checked) {
+    background-image: url('https://raw.githubusercontent.com/Madisonw/3f-sheets/main/img/lg/3F_Dice_6_Large.png');
+}
+.dice-container:has(option[value='8']:checked) {
+    background-image: url('https://raw.githubusercontent.com/Madisonw/3f-sheets/main/img/lg/3F_Dice_8_Large.png');
+}
+.dice-container:has(option[value='10']:checked) {
+    background-image: url('https://raw.githubusercontent.com/Madisonw/3f-sheets/main/img/lg/3F_Dice_10_Large.png');
+}
+.dice-container:has(option[value='12']:checked) {
+    background-image: url('https://raw.githubusercontent.com/Madisonw/3f-sheets/main/img/lg/3F_Dice_12_Large.png');
+}
